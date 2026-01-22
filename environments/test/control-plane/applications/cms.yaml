@@ -10,12 +10,12 @@ spec:
     name     : in-cluster
     namespace: control
   source:
-    path   : "HelmCharts/MyChart1"
+    path   : "helm/platform-common-services/control-plane/cms"
     repoURL: "https://github.com/zbykovskyi/argocd.git"
     targetRevision: multienv
     helm:
       valueFiles:
-        - values_dev.yaml
+        - /environments/test/control-plane/applications/cms-values.yaml
       parameters:
         - name: "container.image"
           value: adv4000/app1:v1

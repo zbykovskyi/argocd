@@ -10,7 +10,7 @@ spec:
     name     : in-cluster
     namespace: control
   source:
-    path   : "HelmCharts/MyChart1"
+    path   : "helm/platform-common-services/control-plane/ums"
     repoURL: "https://github.com/zbykovskyi/argocd.git"
     targetRevision: multienv
     helm:
