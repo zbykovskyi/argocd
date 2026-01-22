@@ -20,7 +20,7 @@ spec:
         - name: "container.image"
           value: adv4000/app2:v1
 
-  project: nabuto
+  project: default
   syncPolicy:
     automated:
       prune   : true

@@ -13,7 +13,7 @@ spec:
     path   : "environments/dev/control-plane/applications"
     repoURL: "https://github.com/zbykovskyi/argocd.git"
     targetRevision: multienv
-  project: nabuto
+  project: default
   syncPolicy:
     automated:
       prune   : true

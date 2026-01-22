@@ -20,7 +20,7 @@ spec:
         - name: "container.image"
           value: adv4000/app1:v0
 
-  project: uto
+  project: default
   syncPolicy:
     automated:
       prune   : true
