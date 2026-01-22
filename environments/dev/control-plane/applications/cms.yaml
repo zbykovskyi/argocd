@@ -15,7 +15,7 @@ spec:
     targetRevision: multienv
     helm:
       valueFiles:
-        - /environments/dev/control-plane/applications/values/cms-values.yaml
+        - /environments/dev/control-plane/values/cms-values.yaml
 
   project: default
   syncPolicy:
