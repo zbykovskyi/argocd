@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name     : cms
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name     : in-cluster
+    namespace: control
+  source:
+    path   : "HelmCharts/MyChart1"
+    repoURL: "https://github.com/zbykovskyi/argocd.git"
+    targetRevision: multienv
+    helm:
+      valueFiles:
+        - /environments/dev/control-plane/applications/cms-values.yaml
+      parameters:
+        - name: "container.image"
+          value: adv4000/app1:v0
+
+  project: uto
+  syncPolicy:
+    automated:
+      prune   : true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

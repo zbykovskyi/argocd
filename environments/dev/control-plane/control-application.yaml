@@ -4,18 +4,17 @@ metadata:
   name     : root
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name     : in-cluster
     namespace: argocd
   source:
-    path   : "demo-dev/applications"
-    repoURL: "git@github.com:adv4000/argocd.git"
-    targetRevision: HEAD
-  project: default
+    path   : "environments/dev/control-plane/applications"
+    repoURL: "https://github.com/zbykovskyi/argocd.git"
+    targetRevision: multienv
+  project: uto
   syncPolicy:
     automated:
       prune   : true
       selfHeal: true
-      
